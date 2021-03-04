@@ -87,10 +87,13 @@ class Game extends React.Component {
       const indexDesc = ~step.currentIndex ? 
         `Current index is ${Math.ceil((step.currentIndex + 1) / 3)}, ${step.currentIndex % 3 + 1}` :
         `No step`
+      const spanStyle = {
+        fontWeight: move === this.state.stepNumber ? 'bold': 'normal'
+      }
       return (
         <li key={move}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
-          <span> ---- {indexDesc}</span>
+          <span style={spanStyle}> ---- {indexDesc}</span>
         </li>
       )
     })
