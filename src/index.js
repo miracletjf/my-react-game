@@ -16,6 +16,7 @@ class Board extends React.Component {
       this.props.winInfo.line.includes(i) : false
     return (
       <Square 
+        key={i}
         value={this.props.squares[i]} 
         winMark={winMark}
         onClick={() => this.props.onClick(i)} 
